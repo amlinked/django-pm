@@ -1,0 +1,33 @@
+{% load i18n %}
+
+    <h3>{% trans 'Task Create' %}</h3>
+   
+    <ul>
+    {% for task in project.task_set.all %}
+        <form method='POST' action="{% url 'task_update' task.id %}">
+            {% csrf_token %}
+            <input type='checkbox' 
+                   name='is_complated'
+                   {% if task.is_complated%} checked {% endif %}
+                   onchange = "this.form.submit()"
+            />
+
+            {% if task.description %}  
+                <li>{{ task.description }}</li>
+            {% endif %}
+        </form>
+        <form method='POST' action="{% url 'task_delete' task.id%}">
+            {% csrf_token %}
+            <button type='submit'>Delete</button>
+        </form>
+    {% endfor %}
+    </ul>
+
+    <form method='POST' action="{% url 'task_create' %}">
+        {% csrf_token %}
+        <input type='hidden' value='{{ project.id }}' name='project' />
+        <input type='text' name='description' placeholder='{% trans "New Task" %}' />
+        <input type='submit' value='{% trans "Add" %}'/>
+    </form>
+
+     

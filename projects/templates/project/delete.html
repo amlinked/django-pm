@@ -1,0 +1,11 @@
+{% load i18n %}
+{% block content %}
+    <h3>{% trans 'Delete: ' %} {{ object.title }}</h3>
+    <p>Are You Shure ?</p>
+    
+    <form method='POST'>
+        {% csrf_token %}
+        {{form}}
+        <input type='submit' value='Submit'/>
+    </form>
+{% endblock %}

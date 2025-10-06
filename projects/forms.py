@@ -3,7 +3,6 @@ from django import forms
 
 
 class ProjectCreateForm(forms.ModelForm):
-    
     class Meta:
         model = models.Project
         fields = ("category","title","description")
@@ -11,6 +10,17 @@ class ProjectCreateForm(forms.ModelForm):
             'category' : forms.Select(),
             'title' : forms.TextInput(),
             'description':forms.Textarea()
-            
+        }
+
+
+class ProjectUpdateForm(forms.ModelForm):   
+    class Meta:
+        model = models.Project
+        fields = ("category","title","description", "status")
+        widgets = {
+            'category' : forms.Select(),
+            'title' : forms.TextInput(),
+            'description':forms.Textarea(),
+            'status':forms.Select()
             
         }

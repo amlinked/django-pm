@@ -35,7 +35,7 @@ class Project(models.Model):
     
     
 class Task(models.Model):
-    description = models.TextField(max_length=200)
+    description = models.TextField()
     is_complated = models.BooleanField(default=False)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     
