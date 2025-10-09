@@ -1,33 +1,43 @@
 {% load i18n %}
 
-    <h3>{% trans 'Task Create' %}</h3>
    
-    <ul>
+    <ul class="list-group">
     {% for task in project.task_set.all %}
-        <form method='POST' action="{% url 'task_update' task.id %}">
-            {% csrf_token %}
-            <input type='checkbox' 
-                   name='is_complated'
-                   {% if task.is_complated%} checked {% endif %}
-                   onchange = "this.form.submit()"
-            />
+        <li class="list-group-item d-flex ">
 
-            {% if task.description %}  
-                <li>{{ task.description }}</li>
-            {% endif %}
-        </form>
-        <form method='POST' action="{% url 'task_delete' task.id%}">
-            {% csrf_token %}
-            <button type='submit'>Delete</button>
-        </form>
-    {% endfor %}
+            <form method='POST' action="{% url 'task_update' task.id %}" class="my-auto me-2 d-flex">
+                {% csrf_token %}
+                <input type='checkbox' 
+                    class="form-check-input mx-3 "
+                    name='is_complated'
+                    {% if task.is_complated%} checked {% endif %}
+                    onchange = "this.form.submit()"
+                />
+
+                {% if task.description %}  
+                    <li class="my-auto me-auto d-flex">{{ task.description }}</li>
+                {% endif %}
+
+            </form>
+
+            <form method='POST' action="{% url 'task_delete' task.id%}" class="ms-auto">
+                {% csrf_token %}
+                <button type='submit' class="btn ">
+                    <i class="bi bi-trash text-danger"> </i>
+                </button>
+            </form>
+
+        </li>
+    {% endfor %}    
     </ul>
 
-    <form method='POST' action="{% url 'task_create' %}">
+    <div class="card mt-2">
+    <form method='POST' action="{% url 'task_create' %}" class="d-flex">
         {% csrf_token %}
         <input type='hidden' value='{{ project.id }}' name='project' />
-        <input type='text' name='description' placeholder='{% trans "New Task" %}' />
-        <input type='submit' value='{% trans "Add" %}'/>
+        <input type='text' name='description' placeholder='{% trans "New Task" %}' class="form-control"/>
+        <input type='submit' value='{% trans "Add" %}'class="btn btn-outline-dark" />
     </form>
+    </div>
 
      
