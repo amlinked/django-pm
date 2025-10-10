@@ -1,7 +1,9 @@
-from django.urls import path 
+from django.urls import path , include
 from . import views
 
 urlpatterns = [
+    path('accounts/', include( 'accounts.urls')),
+    
     path('', views.ProjectListView.as_view(),  name='project_list'),
     path('project/create/',views.ProjectCreateView.as_view(),name='project_create'),
     path('project/update/<int:pk>/',views.ProjectUpdateView.as_view(),name='project_update'),

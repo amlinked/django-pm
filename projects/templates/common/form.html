@@ -17,6 +17,7 @@
 
 {% for field in form %}
 <div class='mb-3'>
+    {% csrf_token %}
     <label class="form-label">{{field.label}}</label>
     {{field}}
 </div>
