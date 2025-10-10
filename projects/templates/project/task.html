@@ -5,7 +5,7 @@
     {% for task in project.task_set.all %}
         <li class="list-group-item d-flex ">
 
-            <form method='POST' action="{% url 'task_update' task.id %}" class="my-auto me-2 d-flex">
+            <form method='POST' action="{% url 'task_update' task.id %}" class="my-auto me-auto d-flex">
                 {% csrf_token %}
                 <input type='checkbox' 
                     class="form-check-input mx-3 "
@@ -20,7 +20,7 @@
 
             </form>
 
-            <form method='POST' action="{% url 'task_delete' task.id%}" class="ms-auto">
+            <form method='POST' action="{% url 'task_delete' task.id%}" >
                 {% csrf_token %}
                 <button type='submit' class="btn ">
                     <i class="bi bi-trash text-danger"> </i>
