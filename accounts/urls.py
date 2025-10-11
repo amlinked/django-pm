@@ -1,10 +1,13 @@
 from django.urls import path , include
 from django.contrib.auth import views as auth_views
+from accounts.views import RegisterView , edit_profile
 from accounts.forms import UserLoginForm
 
 urlpatterns = [
     path("login/", auth_views.LoginView.as_view(authentication_form=UserLoginForm), name="login"),
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),
+    path('profile/', edit_profile, name="profile"),
+    path("register/", RegisterView.as_view(), name="register"),
 
     path("password_change/", auth_views.PasswordChangeView.as_view(),
          name="password_change"),
