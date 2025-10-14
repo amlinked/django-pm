@@ -36,7 +36,7 @@ class ProjectUpdateView(LoginRequiredMixin , UserPassesTestMixin , UpdateView):
     template_name = 'project/update.html'
     # success_url = reverse_lazy('project_list')    
     def test_func(self):
-        return self.get_object().user_id == self.request.user.id
+        return self.get_object().user_id == self.request.user.id # type: ignore
     
     def get_success_url(self):
         return reverse('project_update' , args=[self.object.id]) # type: ignore
@@ -46,7 +46,7 @@ class ProjectDeleteView(LoginRequiredMixin ,UserPassesTestMixin , DeleteView):
     template_name = 'project/delete.html'
     success_url = reverse_lazy('project_list')         
     def test_func(self):
-        return self.get_object().user_id == self.request.user.id    
+        return self.get_object().user_id == self.request.user.id     # type: ignore
         
         
 class TaskCreateView(LoginRequiredMixin ,UserPassesTestMixin , CreateView):
@@ -56,7 +56,7 @@ class TaskCreateView(LoginRequiredMixin ,UserPassesTestMixin , CreateView):
     
     def test_func(self):
         project_id = self.request.POST.get('project' , '')
-        return models.Project.objects.get(pk=project_id).user_id == self.request.user.id  
+        return models.Project.objects.get(pk=project_id).user_id == self.request.user.id   # type: ignore
     
     def get_success_url(self):
         return reverse('project_update' , args=[self.object.project.id])  # type: ignore   
@@ -67,7 +67,7 @@ class TaskUpdateView(LoginRequiredMixin ,UserPassesTestMixin, UpdateView):
     http_method_names= ['post']
     
     def test_func(self):
-        return self.get_object().project.user_id == self.request.user.id  
+        return self.get_object().project.user_id == self.request.user.id   # type: ignore
     
     def get_success_url(self):
         return reverse('project_update' , args=[self.object.project.id])  # type: ignore    
@@ -76,7 +76,7 @@ class TaskdeleteView(LoginRequiredMixin ,UserPassesTestMixin , DeleteView):
     model = models.Task 
     
     def test_func(self):
-        return self.get_object().project.user_id == self.request.user.id  
+        return self.get_object().project.user_id == self.request.user.id   # type: ignore
    
     def get_success_url(self):
         return reverse('project_update' , args=[self.object.project.id])  # type: ignore    

@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-14 14:52+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+#: .\accounts\forms.py:25
+msgid "First_name"
+msgstr "الاسم الاول"
+
+#: .\accounts\forms.py:29
+msgid "Lastname"
+msgstr "اللقب"
+
+#: .\accounts\forms.py:33
+msgid "Username"
+msgstr "معرف المستخدم"
+
+#: .\accounts\forms.py:37
+msgid "Email"
+msgstr "البريد الالكرتوني"
+
+#: .\accounts\forms.py:42
+msgid "Password"
+msgstr "كلمة المرور"
+
+#: .\accounts\forms.py:47
+msgid "Password Confirmation"
+msgstr "تاكيد كلمة المرور"
+
+#: .\accounts\templates\registration\login.html:10
+msgid "Sign in"
+msgstr "تسجيل الدخول"
+
+#: .\accounts\templates\registration\login.html:16
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: .\accounts\templates\registration\profile.html:10
+msgid "Profile"
+msgstr "الحساب الشخصي"
+
+#: .\accounts\templates\registration\profile.html:16
+msgid "Save"
+msgstr "حفظ"
+
+#: .\accounts\templates\registration\register.html:10
+#: .\accounts\templates\registration\register.html:16
+msgid "Sign Up"
+msgstr "انشاء حساب جديد"
