@@ -6,7 +6,9 @@ from django.utils.translation import gettext as _
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
-    
+    class Meta :
+        verbose_name = _('category')
+        verbose_name_plural = _('category')
     def __str__(self) :
         return self.name
     
@@ -34,6 +36,10 @@ class Project(models.Model):
     def __str__(self):
         return self.title
     
+    class Meta :
+        verbose_name = _('Project List')
+        verbose_name_plural = _('Project List')    
+    
     
 class Task(models.Model):
     description = models.TextField()
@@ -42,5 +48,8 @@ class Task(models.Model):
     
     def __str__(self):
         return self.description
-    
-        
+
+    class Meta :
+            verbose_name = _('Task')
+            verbose_name_plural = _('Task')        
+            

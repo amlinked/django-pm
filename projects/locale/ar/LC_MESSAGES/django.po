@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-14 14:52+0300\n"
+"POT-Creation-Date: 2025-10-15 10:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-#: .\projects\forms.py:11
+
+#: .\projects\forms.py:11 .\projects\models.py:10 .\projects\models.py:11
 msgid "category"
 msgstr "التصنيف"
 
@@ -30,21 +31,30 @@ msgstr "العنوان"
 msgid "description"
 msgstr " التفاصيل "
 
-#: .\projects\models.py:14
+#: .\projects\models.py:16
 msgid "pending"
 msgstr "وضع التنفذ"
 
-#: .\projects\models.py:15
+#: .\projects\models.py:17
 msgid "complate"
 msgstr "مكتمل"
 
-#: .\projects\models.py:16
+#: .\projects\models.py:18
 msgid "postponed"
 msgstr "معلق"
 
-#: .\projects\models.py:17
+#: .\projects\models.py:19
 msgid "canceled"
 msgstr "ملغي"
+
+#: .\projects\models.py:40 .\projects\models.py:41
+#: .\projects\templates\project\list.html:8
+msgid "Project List"
+msgstr "قائمة المشاريع"
+
+#: .\projects\models.py:53 .\projects\models.py:54
+msgid "Task"
+msgstr "المهام"
 
 #: .\projects\templates\partials\footer.html:5
 msgid "(C) 2025 amlinked. All right reseved."
@@ -66,7 +76,7 @@ msgstr "الحساب الشخصي"
 msgid "Logout"
 msgstr "تسجيل خروج"
 
-#: .\projects\templates\partials\header.html:40
+#: .\projects\templates\partials\header.html:37
 msgid "Search"
 msgstr "البحث"
 
@@ -99,10 +109,6 @@ msgstr "هل انت متاكد سوف يتم الحذف"
 msgid "Delete"
 msgstr "حذف"
 
-#: .\projects\templates\project\list.html:8
-msgid "Project List"
-msgstr "قائمة المشاريع"
-
 #: .\projects\templates\project\list.html:11
 #: .\projects\templates\project\list.html:52
 msgid "+ New Project"
@@ -134,6 +140,12 @@ msgstr "مهمة جديدة"
 msgid "Add"
 msgstr "اضافة"
 
-#: .\projects\templates\project\update.html:32
+#: .\projects\templates\project\update.html:37
 msgid "Save"
 msgstr "حفظ"
+
+#: .\projects_mangement\urls.py:22 .\projects_mangement\urls.py:23
+#, fuzzy
+#| msgid "Projects Management"
+msgid "Project Management"
+msgstr "ادارة المشاريع"
