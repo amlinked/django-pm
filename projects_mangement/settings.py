@@ -89,20 +89,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'projects_mangement.wsgi.application'
 
+import dj_database_url
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangoDB-pm',
-        'USER': 'postgres',
-        'PASSWORD': 'Pass1010',
-        'HOST': 'localhost',
-        'PORT':    ''
-        
-    }
+	"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+
 }
 
 
